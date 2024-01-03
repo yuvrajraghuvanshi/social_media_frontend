@@ -21,6 +21,7 @@ export default function Feed({username}) {
   },[username,user._id])
   return (
     <div className="feed">
+      {/* //hello */}
       <div className="feedWrapper">
        {(!username ||username=== user.username) && <Share />}
         {posts.map((p) => (
