@@ -7,7 +7,8 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Routes
+  Routes,
+  Navigate
 } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 function App() {
@@ -16,8 +17,8 @@ function App() {
     <Router>
     <Routes>
       <Route exact path="/" element={user? <Home/>:<Register/>}> </Route> 
-   <Route exact path="/login" element={user? <Home/>:<Login/>}> </Route>
-<Route exact path="/register" element={user? <Home/>:<Register/>}> </Route>
+   <Route  path="/login" element={user? <Navigate to="/"/>:<Login/>}> </Route>
+<Route  path="/register" element={user? <Navigate to="/"/>:<Register/>}> </Route>
   
     <Route path="/profile/:username" element={<Profile/>}>
     </Route>
