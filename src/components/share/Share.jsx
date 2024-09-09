@@ -32,7 +32,7 @@ export default function Share() {
     }
     try {
       await axios.post("/posts/create", newPost);
-      window.location.reload()
+      // window.location.reload()
     } catch (err) {
       console.log(err)
     }

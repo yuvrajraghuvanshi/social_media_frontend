@@ -2,7 +2,7 @@ import "./post.css";
 import { MoreVert } from "@material-ui/icons";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import {format } from "timeago.js"
+// import {format } from "timeago.js"
 import {Link} from 'react-router-dom'
 import { AuthContext } from "../../context/AuthContext";
 export default function Post({ post }) {
@@ -15,8 +15,8 @@ export default function Post({ post }) {
   const {user:currentUser}=useContext(AuthContext)
 
   useEffect(()=>{
-    setIsLiked(post.likes.includes(currentUser._id))
-  },[currentUser._id,post.likes])
+    setIsLiked(post?.likes?.includes(currentUser?._id))
+  },[currentUser?._id,post?.likes])
   useEffect(()=>{
     const fetchData=async()=>{
       // console.log(post.userId,'id')
@@ -51,7 +51,7 @@ export default function Post({ post }) {
             <span className="postUsername">
               {user.username}
             </span>
-            <span className="postDate">{format(post.createdAt)}</span>
+            {/* <span className="postDate">{format(post.createdAt)}</span> */}
           </div>
           <div className="postTopRight">
             <MoreVert />
